@@ -1,0 +1,12 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-item-left {
+  display: flex;
+}
+.cart-item-left img {
+  width: 60px;
+  object-fit: contain;
+}
