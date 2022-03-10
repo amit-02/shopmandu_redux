@@ -6,6 +6,10 @@
 .cart-item-left {
   display: flex;
 }
+.cart-item-right {
+  padding-left: 20px;
+  justify-content: right;
+}
 .cart-item-left img {
   width: 60px;
   object-fit: contain;

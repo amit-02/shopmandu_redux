@@ -5,6 +5,8 @@ import Product from "../Views/Product";
 import "./Cart.css";
 import convertDollarToNpr from "../utilities/convertDollarToNpr";
 import { useSelector } from "react-redux";
+import Checkout from "./Checkout";
+import { useNavigate } from "react-router-dom";
 
 const Cart = (props) => {
   const cartItem = useSelector((state) => {
@@ -14,6 +16,9 @@ const Cart = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  let navigate = useNavigate();
+
   return (
     <div>
       <Button variant="primary" onClick={handleShow}>
@@ -67,7 +72,12 @@ const Cart = (props) => {
           <div className="total-amount">
             <p>Total Amount:</p>
 
-            <Button variant="primary" onClick={handleClose}>
+            <Button
+              variant="primary"
+              onClick={() => {
+                navigate("/checkout");
+              }}
+            >
               Checkout
             </Button>
           </div>

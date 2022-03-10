@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .product-header {
@@ -18,11 +18,12 @@
 
 .card {
   bottom: 10px;
-  border: 1px;
+  border-style: solid;
+  border: 5px;
   border-radius: 15px;
   padding: 10px;
   margin: 40px 20px;
-  background-color: white;
+  background-color: rgb(236, 230, 230);
 }
 .product-image {
   width: 100%;

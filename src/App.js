@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "./redux/actions/products";
 import { setCartItem } from "./redux/actions/cartItem";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Checkout from "./components/Checkout";
+import ProductDetails from "./components/ProductDetail";
 
 function App() {
   // const [cartItem, setCartItem] = useState([]);
@@ -65,22 +68,38 @@ function App() {
 
   return (
     <>
-      {/* <Provider store={store}> */}
-      <div className="App">
-        <Header
-          // cartItem={cartItem}
-          getCartValue={getCartValue}
-          handleAddToCart={handleAddToCart}
-          handleDelete={handleDelete}
-        />
-        <Product
-          handleAddToCart={handleAddToCart}
-          handleDelete={handleDelete}
-          cartItem={cartItem}
-          getCartValue={getCartValue}
-        />
-      </div>
-      {/* </Provider> */}
+      <Router>
+        <div className="App">
+          <Header
+            // cartItem={cartItem}
+            getCartValue={getCartValue}
+            handleAddToCart={handleAddToCart}
+            handleDelete={handleDelete}
+          />
+
+          {/* <Product
+            handleAddToCart={handleAddToCart}
+            handleDelete={handleDelete}
+            cartItem={cartItem}
+            getCartValue={getCartValue}
+          /> */}
+        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Product
+                handleAddToCart={handleAddToCart}
+                handleDelete={handleDelete}
+                cartItem={cartItem}
+                getCartValue={getCartValue}
+              />
+            }
+          />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </Router>
     </>
   );
 }

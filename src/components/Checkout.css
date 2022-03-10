@@ -1,0 +1,17 @@
+.checkout-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.form-control {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 5px solid;
+  border-radius: 3px;
+}
+.form-group input[type="text, email"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
